@@ -42,9 +42,9 @@
 		EB32FE0F0FF007EB00975B2D /* lcdimg.c in Sources */ = {isa = PBXBuildFile; fileRef = EB32FE0B0FF007EB00975B2D /* lcdimg.c */; };
 		EB32FE110FF007EB00975B2D /* VeMU.c in Sources */ = {isa = PBXBuildFile; fileRef = EB32FE0D0FF007EB00975B2D /* VeMU.c */; };
 		EB32FE980FF00B3D00975B2D /* cpu.c in Sources */ = {isa = PBXBuildFile; fileRef = EB32FE970FF00B3D00975B2D /* cpu.c */; };
-		EB9BE9F816E2AC39006E6767 /* ControlsPreference.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9BE9F716E2AC39006E6767 /* ControlsPreference.xib */; };
 		EBD130A30FEE648B002C29D2 /* vmu.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD130A20FEE648B002C29D2 /* vmu.png */; };
-		F4BBA4F91A93AAB900010B57 /* OpenEmuBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BBA4F81A93AAB900010B57 /* OpenEmuBase.framework */; };
+		F48C0CED1A9D23FE00D87146 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48C0CEC1A9D23FE00D87146 /* Foundation.framework */; };
+		F4B252DD1A96D5F300849ECA /* OpenEmuBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B252DC1A96D5F300849ECA /* OpenEmuBase.framework */; };
 		F4BBA5231A944C6600010B57 /* VMUGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BBA5221A944C6600010B57 /* VMUGameController.m */; };
 		F4BBA5301A966B8200010B57 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BBA52F1A966B8200010B57 /* SDL.framework */; };
 		F4BBA5311A966B9100010B57 /* SDL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4BBA52F1A966B8200010B57 /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,21 +97,18 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF630370AF2F00C91783 /* VeMU_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VeMU_Prefix.pch; sourceTree = "<group>"; };
 		3720DB4C0F19510D00744A9A /* VeMU.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = VeMU.icns; sourceTree = "<group>"; };
-		82CAFAD90FEDA5CA00CCDC7E /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* VeMU.oecoreplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeMU.oecoreplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C66DFC180F51D82F0080AA28 /* VMUGameCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMUGameCore.m; sourceTree = "<group>"; };
 		C66DFC190F51D82F0080AA28 /* VMUGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMUGameCore.h; sourceTree = "<group>"; };
-		C689A4DC0FE45C2A00885BC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		EB32FE0B0FF007EB00975B2D /* lcdimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lcdimg.c; sourceTree = "<group>"; };
 		EB32FE0D0FF007EB00975B2D /* VeMU.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VeMU.c; sourceTree = "<group>"; };
 		EB32FE0E0FF007EB00975B2D /* prototypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prototypes.h; sourceTree = "<group>"; };
 		EB32FE970FF00B3D00975B2D /* cpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpu.c; sourceTree = "<group>"; };
-		EB9BE9E016E29ED6006E6767 /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEmuBase.framework; path = "../../../Library/Developer/Xcode/DerivedData/OpenEmu-dikdfnebddlayyfxtwhrpkwlejsi/Build/Products/Debug/OpenEmuBase.framework"; sourceTree = "<group>"; };
-		EB9BE9F716E2AC39006E6767 /* ControlsPreference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsPreference.xib; sourceTree = "<group>"; };
 		EBD130A20FEE648B002C29D2 /* vmu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vmu.png; sourceTree = "<group>"; };
-		F4BBA4F81A93AAB900010B57 /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEmuBase.framework; path = "../../Library/Developer/Xcode/DerivedData/OpenEmu-alsvtuyjlafxuuafstkftpvujjwa/Build/Products/Debug/OpenEmuBase.framework"; sourceTree = "<group>"; };
+		F48C0CEC1A9D23FE00D87146 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F4B252DC1A96D5F300849ECA /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEmuBase.framework; path = "../../../Library/Developer/Xcode/DerivedData/OpenEmu-alsvtuyjlafxuuafstkftpvujjwa/Build/Products/Debug/OpenEmuBase.framework"; sourceTree = "<group>"; };
 		F4BBA5221A944C6600010B57 /* VMUGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMUGameController.m; sourceTree = "<group>"; };
 		F4BBA5241A944C9400010B57 /* VMUGameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMUGameController.h; sourceTree = "<group>"; };
 		F4BBA52B1A94569000010B57 /* OEVMUSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEVMUSystemResponderClient.h; sourceTree = "<group>"; };
@@ -123,8 +120,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48C0CED1A9D23FE00D87146 /* Foundation.framework in Frameworks */,
+				F4B252DD1A96D5F300849ECA /* OpenEmuBase.framework in Frameworks */,
 				F4BBA5301A966B8200010B57 /* SDL.framework in Frameworks */,
-				F4BBA4F91A93AAB900010B57 /* OpenEmuBase.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,14 +133,12 @@
 		089C166AFE841209C02AAC07 /* VeMU */ = {
 			isa = PBXGroup;
 			children = (
-				F4BBA52F1A966B8200010B57 /* SDL.framework */,
-				F4BBA4F81A93AAB900010B57 /* OpenEmuBase.framework */,
+				F48C0CEC1A9D23FE00D87146 /* Foundation.framework */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
-				C689A4DC0FE45C2A00885BC3 /* Foundation.framework */,
 			);
 			name = VeMU;
 			sourceTree = "<group>";
@@ -159,9 +155,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB9BE9F716E2AC39006E6767 /* ControlsPreference.xib */,
 				EBD130A20FEE648B002C29D2 /* vmu.png */,
-				82CAFAD90FEDA5CA00CCDC7E /* dsa_pub.pem */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				3720DB4C0F19510D00744A9A /* VeMU.icns */,
@@ -184,7 +178,8 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB9BE9E016E29ED6006E6767 /* OpenEmuBase.framework */,
+				F4B252DC1A96D5F300849ECA /* OpenEmuBase.framework */,
+				F4BBA52F1A966B8200010B57 /* SDL.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -278,7 +273,6 @@
 				3720DB4D0F19510D00744A9A /* VeMU.icns in Resources */,
 				EBD130A30FEE648B002C29D2 /* vmu.png in Resources */,
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
-				EB9BE9F816E2AC39006E6767 /* ControlsPreference.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

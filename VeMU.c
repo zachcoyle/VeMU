@@ -21,7 +21,7 @@ extern void putpixel();
 
 
 //start muted
-static int mute = 1;
+static int mute = 0;
 
 extern int optind;
 extern char *optarg;
@@ -118,6 +118,24 @@ static void sound_callback(void *userdata, Uint8 *stream, int len)
   }
 }
 
+void init_sound()
+{
+    static SDL_AudioSpec desired = {
+        32768,
+        AUDIO_S8,
+        1,
+        0, 256, 0, 0,
+        sound_callback,
+        NULL
+    };
+    
+    if(SDL_Init(SDL_INIT_AUDIO)<0)
+        fprintf(stderr, "Failed to SDL_Init, sound disabled.\n");
+    else if(SDL_OpenAudio(&desired, NULL)<0)
+        fprintf(stderr, "Failed to SDL_OpenAudio, sound disabled.\n");
+    else
+        SDL_PauseAudio(0);
+}
 ///* Main Function */
 //int main(int argc, char *argv[]) {
 //  int c;
@@ -188,24 +206,25 @@ void error_msg(char *fmt, ...)
 
 void vmputpixel(int x, int y, int p)
 {
-	int screen_x, screen_y;
-	screen_x = (x<<1) + 36;
-	screen_y = (y<<1) + 85;
-	
-	unsigned short color = p & 0x1 ? FOREGROUND : BACKGROUND;
+    int screen_x, screen_y;
+    screen_x = (x<<0)/* + 36*/;
+    screen_y = (y<<3)/* + 85*/;
     
-	putpixel(screen_x, screen_y, color);
-	putpixel(screen_x+1, screen_y, color);
-	putpixel(screen_x, screen_y+1, color);
-	putpixel(screen_x+1, screen_y+1, color);
+    unsigned short color = p & 0x1 ? FOREGROUND : BACKGROUND;
+    
+    putpixel(screen_x, screen_y, color);
+//    putpixel(screen_x+1, screen_y, color);
+//    putpixel(screen_x, screen_y+1, color);
+//    putpixel(screen_x+1, screen_y+1, color);
 }
 
 void putpixel(int x, int y, int pixel)
 {
-	if(x > 479 || y > 271) return;
+//    int bpp = surface->format->BytesPerPixel;
+//    if(x > 479 || y > 271) return;
     int bpp = 4;
     /* Here p is the address to the pixel we want to set */
-    int k = y * 96 + x * bpp;
+    //    int k = y * 96 + x * bpp;
     Uint8 *p = (Uint8 *)lcdbuffer + y * 24 + x * bpp;
     
     switch(bpp) {
@@ -236,37 +255,7 @@ void putpixel(int x, int y, int pixel)
 }
 
 
-//void vmputpixel(int x, int y, int p)
-//{
-//  
-//  /* Multilpy for scale support */
-//  int i,j;
-//  int k=0;
-//  int pixel = p&1;
-//  x *= SCALE;
-//  y *= SCALE;
-//  
-//  /* write scaled pixel (or not scaled) */
-//  if(pixel) {
-//    for (i=0;i<SCALE;i++) {
-//      for (j=0;j<SCALE;j++) {
-//        k =(y*WIDTH)+x+j+i;
-//        lcdbuffer[k] = (unsigned char*)FOREGROUND;
-//      }
-//    }  
-//  }
-//  else {
-//    for (i=0;i<SCALE;i++) {
-//      for (j=0;j<SCALE;j++) {
-//        k =(y*WIDTH)+x+j+i;
-//        //k =(y*WIDTH)+x;
-//        lcdbuffer[k] = (unsigned char*)BACKGROUND;
-//      }
-//    }  
-//    
-//  }
-//  
-//}
+
 
 void redrawlcd()
 {

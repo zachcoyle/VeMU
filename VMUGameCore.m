@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2009, OpenEmu Team
+ Copyright (c) 2015, OpenEmu Team
  All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
@@ -100,20 +100,29 @@ VMUGameCore *current;
 //    if(skip)[bufLock unlock];
 }
 
-- (void)setupEmulation
-{
-    //loadflash([gamepath UTF8String]);
-    //resetcpu();
-    //do_vmsgame([gamepath UTF8String],NULL);
-}
+//- (void)setupEmulation
+//{
+////    NSString *biosPath = current.biosDirectoryPath;
+//
+//    NSLog(@"VMU setupEmulation gamepath: %@",gamepath);
+//    loadflash([gamepath UTF8String]);
+//    resetcpu();
+//    
+////    NSLog(@"VMU Loaded file at path: %@",gamepath);
+////    NSLog(@"VMU Loaded BIOS at path: %@",biosPath);
+////    do_vmsgame((char *)gamepath, (char *)NULL);
+////    do_vmsgame([gamepath UTF8String],(char *)biosPath);
+//}
 
-- (BOOL)loadFileAtPath:(NSString *)path error:(NSError **)error
+- (BOOL)loadFileAtPath:(NSString *)path
 {
-    //gamepath = [[NSString alloc] initWithString:path];
-    char *gamepath2 = (char *)[path UTF8String];
-    NSLog(@"VMU Loaded file at path: %@",path);
-    //do_vmsgame([path UTF8String],NULL);
-    do_vmsgame(gamepath2, (char *)NULL);
+    loadflash((char *)[path UTF8String]);
+    resetcpu();
+    
+    init_sound();
+    
+    char *vmugamepath = (char *)[path UTF8String];
+    do_vmsgame(vmugamepath, (char *)NULL);
     
     //TODO: Check that magic header is 0x211000D9 otherwise return NO
     
@@ -129,7 +138,7 @@ VMUGameCore *current;
 
 - (void)stopEmulation
 {
-//    resetcpu();
+    resetcpu();
 	[super stopEmulation];
 }
 
@@ -156,17 +165,17 @@ VMUGameCore *current;
 
 - (GLenum)pixelFormat
 {
-	return GL_RGBA;
+    return GL_BGRA;
 }
 
 - (GLenum)pixelType
 {
-	return GL_UNSIGNED_INT_8_8_8_8;
+    return GL_UNSIGNED_INT_8_8_8_8_REV;
 }
 
 - (GLenum)internalPixelFormat
 {
-	return GL_RGBA;
+    return GL_RGB8;
 }
 
 #pragma mark Audio

@@ -4,7 +4,7 @@
 #define VEMU_VERSION "0.19"
 
 #define WIDTH 48                  // LCD screen is technically 48x32
-#define HEIGHT 40                 // make it 40 for the buitl-in icons at the bottom
+#define HEIGHT 40                 // make it 40 for the built-in icons at the bottom
 
 #define SCALE 1             //Change here to scale window & content
 
@@ -33,6 +33,7 @@ extern void redrawlcd();
 extern void run_cpu();
 extern void resetcpu();
 extern int loadflash(char *filename);
+extern int loadbios(char *filename);
 
 extern void VeMU_ButtonPressed(int button);
 extern void VeMU_ButtonReleased(int button);
